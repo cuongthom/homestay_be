@@ -16,8 +16,9 @@ app.use(cors()); // Use this after the variable declaration
 // app.use(checkToken)
 app.use(express.json());
 
-app.get("/home", (req, res) => {
-  res.status(200).json("Welcome, your app is working well");
+app.get("/", (req, res) => {
+  res.send("hello hotel");
+  console.log("Hello hotel");
 });
 app.use("/v1", userRoutes);
 app.use("/v2", homestayImage);
