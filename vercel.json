@@ -3,21 +3,14 @@
     "builds": [
       {
         "src": "src/index.js",
-        "use": "@vercel/node"
+        "use": "homestay-be"
       }
     ],
     "routes": [
       {
-        "src": "/v1/(.*)",
-        "dest": "src/index.js"
-      },
-      {
-        "src": "/v2/(.*)",
-        "dest": "src/index.js"
-      },
-      {
-        "src": "/v3/(.*)",
+        "src": "/(.*)",
         "dest": "src/index.js"
       }
+    
     ]
   }
