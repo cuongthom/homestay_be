@@ -3,8 +3,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 const { connect } = require("./database/database.js");
 const app = express();
-const configViewEngine = require("./configs/viewEngine.js");
-configViewEngine(app);
+// const configViewEngine = require("./configs/viewEngine.js");
+// configViewEngine(app);
 // const checkToken = require("./authentication/auth.js");
 const userRoutes = require("./routes/User.js");
 const homestayImage = require("./routes/ImageHomestay.js");
@@ -16,11 +16,8 @@ app.use(cors()); // Use this after the variable declaration
 // app.use(checkToken)
 app.use(express.json());
 
-
-
-app.get("/", (req, res) => {
-  res.send("hello hotel");
-  console.log("Hello hotel");
+app.get("/", function (req, res, next) {
+  console.log("hello");
 });
 app.use("/v1", userRoutes);
 app.use("/v2", homestayImage);
