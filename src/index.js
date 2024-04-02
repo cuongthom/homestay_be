@@ -5,7 +5,7 @@ const { connect } = require("./database/database.js");
 const app = express();
 const configViewEngine = require("./configs/viewEngine.js");
 configViewEngine(app);
-const checkToken = require("./authentication/auth.js");
+// const checkToken = require("./authentication/auth.js");
 const userRoutes = require("./routes/User.js");
 const homestayImage = require("./routes/ImageHomestay.js");
 const paymentVnPay = require("./routes/PaymentVnPay.js");
@@ -15,6 +15,8 @@ app.use(upload());
 app.use(cors()); // Use this after the variable declaration
 // app.use(checkToken)
 app.use(express.json());
+
+
 
 app.get("/", (req, res) => {
   res.send("hello hotel");
