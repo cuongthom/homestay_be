@@ -22,6 +22,7 @@ app.get("/", function (req, res, next) {
 app.use("/v1", userRoutes);
 app.use("/v2", homestayImage);
 app.use("/v3", paymentVnPay);
+
 app.listen(process.env.PORT || 9090, async (req, res) => {
   await connect();
   console.log(`Example app listening on port ${process.env.PORT}`);
