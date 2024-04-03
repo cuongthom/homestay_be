@@ -1,14 +1,13 @@
 const express = require("express");
 const dotenv = require("dotenv");
 dotenv.config();
-const { connect } = require("./database/database.js");
+const { connect } = require("./src/database/database.js");
 const app = express();
-const configViewEngine = require("./configs/viewEngine.js");
-configViewEngine(app);
-const checkToken = require("./authentication/auth.js");
-const userRoutes = require("./routes/User.js");
-const homestayImage = require("./routes/ImageHomestay.js");
-const paymentVnPay = require("./routes/PaymentVnPay.js");
+
+// const checkToken = require("./authentication/auth.js");
+const userRoutes = require("./src/routes/User.js");
+const homestayImage = require("./src/routes/ImageHomestay.js");
+const paymentVnPay = require("./src/routes/PaymentVnPay.js");
 const cors = require("cors");
 const upload = require("express-fileupload");
 app.use(upload());
@@ -17,7 +16,8 @@ app.use(cors()); // Use this after the variable declaration
 app.use(express.json());
 
 app.get("/", function (req, res, next) {
-  res.send("welcome")
+  res.send("hello");
+  console.log("hello");
 });
 app.use("/v1", userRoutes);
 app.use("/v2", homestayImage);
