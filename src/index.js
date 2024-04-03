@@ -17,7 +17,7 @@ app.use(cors()); // Use this after the variable declaration
 app.use(express.json());
 
 app.get("/", function (req, res, next) {
-  console.log("hello");
+  res.send("welcome")
 });
 app.use("/v1", userRoutes);
 app.use("/v2", homestayImage);
