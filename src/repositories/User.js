@@ -107,7 +107,6 @@ const updateUser = async ({ id, userName, email, address }) => {
         throw new Error(err)
     }
 }
-
 const getUserByJWT = async (token) => {
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET)
