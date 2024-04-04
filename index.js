@@ -15,6 +15,7 @@ app.use(cors()); // Use this after the variable declaration
 // app.use(checkToken)
 app.use(express.json());
 
+
 app.get("/", function (req, res, next) {
   res.send("hello");
   console.log("hello");
