@@ -8,6 +8,7 @@ const app = express();
 const userRoutes = require("./src/routes/User.js");
 const homestayImage = require("./src/routes/ImageHomestay.js");
 const paymentVnPay = require("./src/routes/PaymentVnPay.js");
+// const uploadfile = require("./src/routes/UploadFile.js");
 const cors = require("cors");
 const upload = require("express-fileupload");
 app.use(upload());
@@ -23,7 +24,7 @@ app.get("/", function (req, res, next) {
 app.use("/v1", userRoutes);
 app.use("/v2", homestayImage);
 app.use("/v3", paymentVnPay);
-
+// app.use("/v4", uploadfile);
 app.listen(process.env.PORT || 9090, async (req, res) => {
   await connect();
   console.log(`Example app listening on port ${process.env.PORT}`);

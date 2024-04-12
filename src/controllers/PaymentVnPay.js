@@ -42,7 +42,6 @@ const paymentVn = async (req, res) => {
     locale = "vn";
   }
   const currCode = "VND";
-
   // Prepare VNPay parameters
   const vnp_Params = {
     vnp_Version: "2.1.0",
