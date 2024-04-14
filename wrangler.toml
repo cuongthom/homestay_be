@@ -1,0 +1,6 @@
+name = "homestay-be"
+pages_build_output_dir = "./index.js"
+
+[vars]
+API_KEY = "cuongthom"
+YARN_VERSION = "1.22.19"
